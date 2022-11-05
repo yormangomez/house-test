@@ -1,8 +1,9 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://techn:Gomez257@cluster0.scusi.mongodb.net/test',{
+mongoose.connect(process.env.MONGODB_CNN,{
             useUnifiedTopology: true,
-            useNewUrlParser: true,
+            useNewUrlParser: true
             })
         .then((db) => console.log('Db is Connected'))
         .catch((err)=>console.log(err));
