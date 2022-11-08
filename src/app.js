@@ -11,7 +11,7 @@ const category = require('./routes/category.routes');
 const search = require('./routes/search.routes');
 const products = require('./routes/products.routes');
 const user = require('./routes/user.routes');
-const uploads = require('./routes/uploads.routes');
+//const uploads = require('./routes/uploads.routes');
 
 
 app.use(cors())
@@ -27,7 +27,7 @@ app.use('/api/category', category)
 app.use('/api/products', products)
 app.use('/api/search', search)
 app.use('/api/user', user)
-app.use('/api/uploads', uploads)
+//app.use('/api/uploads', uploads)
 
 
 module.exports = app;

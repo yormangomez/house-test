@@ -1,6 +1,6 @@
 const {Schema, model} = require('mongoose')
 
-const ProductSchema = Schema({
+const StockSchema = Schema({
     name: {
         type: String,
         required: [true, 'name is required'],
@@ -16,29 +16,13 @@ const ProductSchema = Schema({
         ref: 'User',
         required: true
     },
-    price: {
+    precio: {
         type: Number,
         default: 0
     },
-    sale: {
-        type: Number,
-        default: 0
-    },
-    dimensions: {
-        type: String,
-        default: 0
-    },
-    room: {
-        type: String,
-        default: 0
-    },
-    bathroom: {
-        type: String,
-        default: 0
-    },
-    category: {
+    product: {
         type: Schema.Types.ObjectId,
-        ref: 'Category',
+        ref: 'Product',
         required: true
     },
     description: { type: String },
@@ -49,9 +33,9 @@ const ProductSchema = Schema({
     versionKey: false
 });
 
-ProductSchema.methods.toJSON = function() {
+StockSchema.methods.toJSON = function() {
     const {estado, ...data } = this.toObject();
     return data;
 }
 
-module.exports = model('Product', ProductSchema);
+module.exports = model('Stock', StockSchema);
